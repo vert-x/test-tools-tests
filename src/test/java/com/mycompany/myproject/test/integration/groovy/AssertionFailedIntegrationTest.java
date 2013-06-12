@@ -1,4 +1,4 @@
-package com.mycompany.myproject.test.integration.ruby;
+package com.mycompany.myproject.test.integration.groovy;
 /*
  * Copyright 2013 Red Hat, Inc.
  *
@@ -23,17 +23,17 @@ import org.vertx.testtools.ScriptClassRunner;
 import org.vertx.testtools.TestVerticleInfo;
 
 /**
- * This is dummy JUnit test class which is used to run any Ruby test scripts as JUnit tests.
+ * This is dummy JUnit test class which is used to run any Groovy test scripts as JUnit tests.
  *
- * The scripts by default go in src/test/resources/integration_tests
+ * The scripts by default go in src/test/resources/integration_tests.
  *
- * If you don't have any Ruby tests in your project you can delete this
+ * If you don't have any Groovy tests in your project you can delete this
  *
  * You do not need to edit this file unless you want it to look for tests elsewhere
  */
-@TestVerticleInfo(filenameFilter=".+\\.rb", funcRegex="def[\\s]+(test[^\\s]+)")
+@TestVerticleInfo(filenameFilter="AssertionFailedIntegrationTest.groovy", funcRegex="def[\\s]+(test[^\\s(]+)")
 @RunWith(ScriptClassRunner.class)
-public class RubyIntegrationTests {
+public class AssertionFailedIntegrationTest {
   @Test
   public void __vertxDummy() {
   }

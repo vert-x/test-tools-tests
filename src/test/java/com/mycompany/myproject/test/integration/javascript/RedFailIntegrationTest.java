@@ -1,4 +1,4 @@
-package com.mycompany.myproject.test.integration.python;
+package com.mycompany.myproject.test.integration.javascript;
 /*
  * Copyright 2013 Red Hat, Inc.
  *
@@ -23,17 +23,17 @@ import org.vertx.testtools.ScriptClassRunner;
 import org.vertx.testtools.TestVerticleInfo;
 
 /**
- * This is dummy JUnit test class which is used to run any Python test scripts as JUnit tests.
+ * This is dummy JUnit test class which is used to run any JavaScript test scripts as JUnit tests.
  *
  * The scripts by default go in src/test/resources/integration_tests
  *
- * If you don't have any Python tests in your project you can delete this
+ * If you don't have any JavaScript tests in your project you can delete this
  *
  * You do not need to edit this file unless you want it to look for tests elsewhere
  */
-@TestVerticleInfo(filenameFilter=".+\\.py", funcRegex="def[\\s]+(test[^\\s(]+)")
+@TestVerticleInfo(filenameFilter="redFailIntegrationTest.js", funcRegex="function[\\s]+(test[^\\s(]+)")
 @RunWith(ScriptClassRunner.class)
-public class PythonIntegrationTests {
+public class RedFailIntegrationTest {
   @Test
   public void __vertxDummy() {
   }

@@ -20,15 +20,26 @@ package com.mycompany.myproject.test.integration.java;
 import org.vertx.java.platform.Verticle;
 import org.vertx.testtools.VertxAssert;
 
-public class SomeVerticle extends Verticle {
+public class TestVerticle extends Verticle {
 
   public void start() {
     VertxAssert.initialize(vertx);
 
-    // You can also assert from other verticles!!
-    VertxAssert.assertEquals("foo", "foo");
+    String type = container.config().getString("type");
 
-    // And complete tests from other verticles!!
-    VertxAssert.testComplete();
+    switch (type) {
+      case "fail": {
+        VertxAssert.fail("Failed");
+        break;
+      }
+      case "assert_fail": {
+        VertxAssert.assertEquals("foo", "bar");
+        break;
+      }
+      case "assert_ok": {
+        VertxAssert.assertEquals("foo", "foo");
+        VertxAssert.testComplete();
+      }
+    }
   }
 }

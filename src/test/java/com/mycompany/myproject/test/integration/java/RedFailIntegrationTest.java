@@ -1,12 +1,4 @@
-package com.mycompany.myproject.test.unit;
-
-import com.mycompany.myproject.PingVerticle;
-import org.junit.Assert;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
-/*
+package com.mycompany.myproject.test.integration.java;/*
  * Copyright 2013 Red Hat, Inc.
  *
  * Red Hat licenses this file to you under the Apache License, version 2.0
@@ -23,35 +15,34 @@ import static org.junit.Assert.*;
  *
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
-public class ExampleUnitTest {
+
+import org.junit.Test;
+import org.vertx.java.core.VoidHandler;
+import org.vertx.testtools.TestVerticle;
+import org.vertx.testtools.VertxAssert;
+
+/**
+ * Everything in this test SHOULD fail with RED failures !!
+ */
+public class RedFailIntegrationTest extends TestVerticle {
 
   @Test
-  public void testThrowRuntime() {
-    // Should cause red failure
+  public void testThrowRuntimeDirect() {
     throw new RuntimeException("foo");
   }
-
   @Test
-  public void testThrowChecked() throws Exception {
-    // Should cause red failure
+  public void testThrowCheckedDirect() throws Exception {
     throw new Exception("foo");
   }
 
   @Test
-  public void testThrowError() throws Error {
-    // Should cause red failure
+  public void testThrowErrorDirect() throws Error {
     throw new Error("foo");
   }
 
   @Test
-  public void testThrowThrowable() throws Throwable {
-    // Should cause red failure
+  public void testThrowThrowableDirect() throws Throwable {
     throw new Throwable("foo");
   }
 
-  @Test
-  public void testFail()  {
-    // Should cause orange failure
-    Assert.fail("failed");
-  }
 }
